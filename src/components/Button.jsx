@@ -1,9 +1,18 @@
-import { useState } from "react";
+function ClickMe() {
+  return <span>Click Me!</span>;
+}
 
-function Button({ text = "Click Me!", style = {}, className = "button", id }) {
+function Button({
+  Content = ClickMe,
+  style = {},
+  className = "button",
+  id,
+  onClick,
+  key,
+}) {
   return (
-    <button className={className} id={id} style={style}>
-      {text}
+    <button className={className} id={id} style={style} onClick={onClick}>
+      <Content />
     </button>
   );
 }
